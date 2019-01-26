@@ -1,0 +1,19 @@
+v 0.1d
+ - Add function to change titlebar color
+ - Added custom font
+ - Added apps style (default)
+
+v 0.1c
+ - Apps system add app states
+ - Fixed window click to activate
+ - Apps can be created
+ - Apps can add content
+ - Apps can add a stylesheet
+
+v 0.1b
+ - Apps system (beta)
+
+V 0.1a
+ - Basic Menu system
+ - Basic Taskbar
+ - Basic Window movement

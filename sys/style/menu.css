@@ -1,0 +1,23 @@
+/*
+ * Menu V0.1a
+ */
+
+.OnlineOs-menu {
+	width: 298px;
+	height: 480px;
+	max-height: 100%;
+	position: absolute;
+	bottom: 48px;
+	left: 0;
+	z-index: 99999999999999999999999999999999999999999999999999999999999999999999;
+	padding: 6px;
+	display: none;
+	background-color: #444;
+	overflow: auto;
+}
+
+.OnlineOs-menu-item {
+	width: 100%;
+	height: 30px;
+	margin-bottom: 6px;
+}

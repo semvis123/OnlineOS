@@ -1,0 +1,30 @@
+/*
+ * Taskbar V0.1a
+ */
+
+.OnlineOs-taskbar {
+	width: 100%;
+	height: 48px;
+	position: absolute;
+	z-index: 99999999999999999999999999999999999999999999999999999999999999999999;
+	background-color: #000;
+}
+
+.OnlineOs-taskbar-menu-btn {
+	width: 48px;
+	height: 48px;
+	float: left;
+	background-color: #333;
+}
+
+.OnlineOs-taskbar-switcher {
+	width: calc(100% - 48px);
+	height: 48px;
+}
+
+.OnlineOs-taskbar-app {
+	width: 48px;
+	height: 48px;
+	background-color: #666;
+	float: left;
+}

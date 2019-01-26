@@ -1,0 +1,18 @@
+/*
+ * font V0.1d
+ */
+
+@font-face {
+    font-family: 'Segoe UI MDL2 Assets';
+    src: url('../fonts/segmdl2.ttf');
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/segoeui.ttf');
+}
+
+@font-face {
+    font-family: 'Segoe UI Light';
+    src: url('../fonts/segoeuil.ttf');
+}
