@@ -8,13 +8,16 @@
 
 // Global vars
 var app_id = [
-	"ga.wjtje.hello"
+	'ga.wjtje.hello',
+	'ga.wjtje.content'
 ];
 var apps = {};
 var i;
 
 // Load all apps
 function apps_load() {
+	console.log('Loading app scripts');
+
 	// Foreach app Load app
 	for (i=0; i < app_id.length; i++) {
 		console.log('Loaded app: apps/' + app_id[i] + '/app.js');
@@ -31,6 +34,8 @@ function apps_load() {
 		style.rel = 'stylesheet';
 		document.getElementsByTagName('body')[0].appendChild(style);
 	}
+	
+	console.log('Installing apps');
 }
 
 // Create app

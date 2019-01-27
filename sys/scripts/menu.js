@@ -1,5 +1,5 @@
 /*
- * Menu System v0.1a
+ * Menu System v0.1d
  * 
  * Requirements:
  * - Jquery
@@ -19,16 +19,20 @@ $('.OnlineOs-taskbar-menu-btn').click(function () {
 
 // Open app
 function menu_reload() {
-	$('.OnlineOs-menu-item').click(function () {
-		$this = $(this)[0];
-		
-		// Create app
-		var $window_id = window_create($this.dataset.app);
-		taskbar_create($this.dataset.app, $window_id);
-		
-		// Close menu
-		$('.OnlineOs-menu').css('display', 'none');
-	});
+	for (var i = 0; i < $('.OnlineOs-menu-item').length; i++) {
+		if ($._data($('.OnlineOs-menu-item')[i], "events") == undefined) {
+			$($('.OnlineOs-menu-item')[i]).click(function () {
+				$this = $(this)[0];
+				
+				// Create app
+				var $window_id = window_create($this.dataset.app);
+				taskbar_create($this.dataset.app, $window_id);
+				
+				// Close menu
+				$('.OnlineOs-menu').css('display', 'none');
+			});
+		}
+	}
 }
 
 // Menu add app
