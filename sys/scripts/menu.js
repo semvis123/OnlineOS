@@ -1,5 +1,5 @@
 /*
- * Menu System v0.1d
+ * Menu System v0.2e
  * 
  * Requirements:
  * - Jquery
@@ -23,10 +23,20 @@ function menu_reload() {
 		if ($._data($('.OnlineOs-menu-item')[i], "events") == undefined) {
 			$($('.OnlineOs-menu-item')[i]).click(function () {
 				$this = $(this)[0];
+				$windows = $('.OnlineOs-window');
+				$found = false;
 				
-				// Create app
-				var $window_id = window_create($this.dataset.app);
-				taskbar_create($this.dataset.app, $window_id);
+				for (var j = 0; j < $windows.length; j++) {
+					if ($windows[j].dataset.appId == $this.dataset.app) {
+						$found = true;
+					}
+				}
+				
+				if (!$found) {
+					// Create app
+					var $window_id = window_create($this.dataset.app);
+					taskbar_create($this.dataset.app, $window_id);
+				}
 				
 				// Close menu
 				$('.OnlineOs-menu').css('display', 'none');

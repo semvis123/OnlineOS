@@ -1,5 +1,5 @@
 /*
- * Menu System v0.1c
+ * Menu System v0.1e
  * 
  * Requirements:
  * - Jquery
@@ -9,7 +9,8 @@
 // Global vars
 var app_id = [
 	'ga.wjtje.hello',
-	'ga.wjtje.content'
+	'ga.wjtje.content',
+	'ga.wjtje.calculator'
 ];
 var apps = {};
 var i;
@@ -53,5 +54,9 @@ class app {
 	
 	create() {
 		return null;
+	}
+	
+	run() {
+		console.log(this.name + ' is now running');
 	}
 };

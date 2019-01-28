@@ -1,3 +1,9 @@
+v 0.2a
+ - apps can only be opened once (for now)
+
+v 0.1e
+ - Updated ui apps
+
 v 0.1d
  - Add function to change titlebar color
  - Added custom font

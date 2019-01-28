@@ -1,5 +1,5 @@
 /*
- * Window Manger V0.1e
+ * Window Manger V0.1d
  * 
  * Requirements:
  * - Jquery
@@ -17,7 +17,7 @@ function window_movement() {
 		stack: ".OnlineOs-windows .OnlineOs-window"
 	});
 	
-	$(".OnlineOs-window-resizable").resizable({
+	$(".OnlineOs-window").resizable({
 		minHeight: 150,
 		minWidth: 200,
 		start: function(event, ui) {
@@ -88,23 +88,11 @@ function window_update() {
 
 // Window create 
 function window_create(id) {
-	var $class = '';
-	var $style = '';
-	
 	// Load app
 	var app = apps[id].create();
 	
-	// Size
-	if (app.resizable == true) {
-		$class = ' OnlineOs-window-resizable'
-	}
-	
-	if (app.width != undefined) {
-		$style = ' style="width: ' + app.width + 'px; height: ' + app.height + 'px;"';
-	}
-	
 	// Create window
-	$base_window = '<div class="OnlineOs-window' + $class + '" data-window-id="' + $window_id + '" data-app-id="' + id + '"' + $style + '><div class="OnlineOs-window-titlebar" style="background-color:' + app.bg + '; color:' + app.fg + ';"><div class="OnlineOs-window-title">' + app.name + '</div><div class="OnlineOs-window-hide">&#59721;</div><div class="OnlineOs-window-close">&#59719;</div></div><div class="OnlineOs-window-content">' + app.content + '</div></div>';
+	$base_window = '<div class="OnlineOs-window" data-window-id="' + $window_id + '" data-app-id="' + id + '"><div class="OnlineOs-window-titlebar" style="background-color:' + app.bg + '; color:' + app.fg + ';"><div class="OnlineOs-window-title">' + app.name + '</div><div class="OnlineOs-window-hide"></div><div class="OnlineOs-window-close"></div></div><div class="OnlineOs-window-content">' + app.content + '</div></div>';
 	$('.OnlineOs-windows').append($base_window);
 	
 	// Find window data
@@ -123,9 +111,6 @@ function window_create(id) {
 	
 	// Update window Movement Resizement and buttons
 	window_update();
-	
-	// Run the app
-	apps[id].run();
 	
 	// Return added window id
 	return $window_id - 1;
