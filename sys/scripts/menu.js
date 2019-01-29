@@ -26,11 +26,11 @@ function menu_reload() {
 				$windows = $('.OnlineOs-window');
 				$found = false;
 				
-				for (var j = 0; j < $windows.length; j++) {
-					if ($windows[j].dataset.appId == $this.dataset.app) {
-						$found = true;
-					}
-				}
+				//for (var j = 0; j < $windows.length; j++) {
+				//	if ($windows[j].dataset.appId == $this.dataset.app) {
+				//		$found = true;
+				//	}
+				//}
 				
 				if (!$found) {
 					// Create app

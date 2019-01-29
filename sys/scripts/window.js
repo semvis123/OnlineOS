@@ -1,5 +1,5 @@
 /*
- * Window Manger V0.1e
+ * Window Manger V0.2b
  * 
  * Requirements:
  * - Jquery
@@ -8,13 +8,15 @@
 
 // Global var
 $window_id = 1;
+storage = {};
 
 // Window Movement
 function window_movement() {
 	$(".OnlineOs-windows .OnlineOs-window").draggable({
 		handle: ".OnlineOs-window-titlebar",
 		iframeFix: true,
-		stack: ".OnlineOs-windows .OnlineOs-window"
+		stack: ".OnlineOs-windows .OnlineOs-window",
+		scroll: false
 	});
 	
 	$(".OnlineOs-window-resizable").resizable({
@@ -100,11 +102,15 @@ function window_create(id) {
 	}
 	
 	if (app.width != undefined) {
-		$style = ' style="width: ' + app.width + 'px; height: ' + app.height + 'px;"';
+		$style = 'width: ' + app.width + 'px; height: ' + app.height + 'px;';
+	}
+	
+	if (app.minWidth != undefined) {
+		$style += 'min-Width: ' + app.width + 'px; min-Height: ' + app.height + 'px;';
 	}
 	
 	// Create window
-	$base_window = '<div class="OnlineOs-window' + $class + '" data-window-id="' + $window_id + '" data-app-id="' + id + '"' + $style + '><div class="OnlineOs-window-titlebar" style="background-color:' + app.bg + '; color:' + app.fg + ';"><div class="OnlineOs-window-title">' + app.name + '</div><div class="OnlineOs-window-hide">&#59721;</div><div class="OnlineOs-window-close">&#59719;</div></div><div class="OnlineOs-window-content">' + app.content + '</div></div>';
+	$base_window = '<div class="OnlineOs-window' + $class + '" data-window-id="' + $window_id + '" data-app-id="' + id + '" style="' + $style + '"><div class="OnlineOs-window-titlebar" style="background-color:' + app.bg + '; color:' + app.fg + ';"><div class="OnlineOs-window-title">' + app.name + '</div><div class="OnlineOs-window-hide">&#59721;</div><div class="OnlineOs-window-close">&#59719;</div></div><div class="OnlineOs-window-content">' + app.content + '</div></div>';
 	$('.OnlineOs-windows').append($base_window);
 	
 	// Find window data
@@ -118,14 +124,15 @@ function window_create(id) {
 	// Set window to active
 	window_activate($window);
 	
-	// Update window id
-	$window_id += 1;
-	
 	// Update window Movement Resizement and buttons
 	window_update();
 	
-	// Run the app
-	apps[id].run();
+	// Set the storage and run the app
+	storage[$window_id] = {};
+	apps[id].run($window_id);
+	
+	// Update window id
+	$window_id += 1;
 	
 	// Return added window id
 	return $window_id - 1;

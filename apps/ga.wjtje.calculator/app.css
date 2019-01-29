@@ -9,12 +9,21 @@
 	text-align: right;
 }
 
+.ga-wjtje-calculator-btns {
+	width: 100%;
+	height: calc(100% - 108px);
+}
+
 .ga-wjtje-calculator-btn {
-	width: 60px;
-	height: 60px;
+	width: 25%;
+	height: 20%;
 	float: left;
 	text-align: center;
     line-height: 52px;
+}
+
+.ga-wjtje-calculator-btn-large {
+	width: 50%;
 }
 
 .ga-wjtje-calculator-btn-inner {
