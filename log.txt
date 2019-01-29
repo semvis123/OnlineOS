@@ -1,3 +1,8 @@
+v 0.2c
+  -fixed typos
+  -added function to hide menu when clicked outside the menu
+  -disabled right click context menu
+
 v 0.2a
  - apps can only be opened once (for now)
 
@@ -8,7 +13,7 @@ v 0.1d
  - Add function to change titlebar color
  - Added custom font
  - Added apps style (default)
- - Fixed bug where a app will spawn more than 1 time
+ - Fixed bug causing an app to spawn more than 1 time
 
 v 0.1c
  - Apps system add app states
