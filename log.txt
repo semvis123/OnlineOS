@@ -1,7 +1,10 @@
-v 0.2c
-  -fixed typos
-  -added function to hide menu when clicked outside the menu
-  -disabled right click context menu
+v 0.2b
+ - apps can use a storage for multi window support
+ - apps can have a minimal size
+ - scroll out of screen bug
+ - fixed typos
+ - added function to hide menu when clicked outside the menu
+ - disabled right click context menu
 
 v 0.2a
  - apps can only be opened once (for now)

@@ -57,6 +57,6 @@ class app {
 	}
 	
 	run() {
-		console.log(this.name + ' is now running');
+		return null
 	}
 };
